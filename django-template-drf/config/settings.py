@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from pathlib import Path
-from decouple import config
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = os.getenv('SECRET_KEY')
 
+DEBUG = os.getenv('DEBUG') == 'True'
 
-DEBUG = config("DEBUG") == 'True'
 
 
 
@@ -67,14 +66,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('POSTGRES_DB'),
-        'USER': config('POSTGRES_USER'),
-        'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': "db",
-        'PORT': 5432,
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': 'db'
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -92,7 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en-US"
 
 TIME_ZONE = "UTC"
 

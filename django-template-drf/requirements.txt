@@ -3,5 +3,4 @@ django-cors-headers
 django-filter
 psycopg2
 gunicorn
-python-decouple
 django-rest-framework
