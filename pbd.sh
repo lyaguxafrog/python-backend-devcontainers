@@ -3,7 +3,17 @@
 # https://github.com/lyaguxafrog/python-backend-devcontainer
 
 help() {
-    echo "help"
+    echo "Welcome to Python Backend Devcontainers!
+Usage:
+$ pdb [COMMAND] [OPTION]"
+
+    echo "Commands:"
+    echo " install        Install Python Backend Devcontainers"
+    echo " --as-template Use the repository as a template"
+    echo " --help         Show this help message and exit"
+
+    echo "Options:"
+    echo " -h, --help    Show this help message and exit"
 }
 
 install_pbd() {
@@ -47,6 +57,29 @@ template_drf() {
     xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
 
+template_gql() {
+
+    # delete pbd files
+    rm -rf django-template-gql
+    rm -rf flask-template
+    rm -rf README.md
+    rm -rf LICENSE
+    rm -rf pbd_shell
+    rm -rf docs
+
+    mv django-template-gql kernel
+
+    read -p "Project name: " pr_name
+
+    cat pbd_configs/django_gql_readme.md > README.md
+    sed -i "s/projectname/$pr_name/g" README.md
+
+    rm -rf pbd_configs
+
+    xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_GQL.md
+
+}
+
 as_template() {
     echo "Select template:"
     echo "[1] Django + DRF"
@@ -64,13 +97,16 @@ as_template() {
             git push
             ;;
         2)
-            echo "Выбран шаблон Django + Graphene"
-            # 
+            echo "Django + Graphene"
+            template_drf
+            rm -rf pbd.sh
+            git add .
+            git commit -m "init template"
+            git push
             ;;
         3)
             echo "Flask template in develop.."
             exit 0
-            # 
             ;;
         *)
             echo "Aborted..."
