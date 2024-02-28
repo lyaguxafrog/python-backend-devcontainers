@@ -8,12 +8,12 @@ Usage:
 $ pdb [COMMAND] [OPTION]"
 
     echo "Commands:"
-    echo " install        Install Python Backend Devcontainers"
-    echo " --as-template Use the repository as a template"
-    echo " --help         Show this help message and exit"
+    echo " install         Install Python Backend Devcontainers"
+    echo " --as-template   Use the repository as a template"
+    echo " --help          Show this help message and exit"
 
     echo "Options:"
-    echo " -h, --help    Show this help message and exit"
+    echo " -h, --help      Show this help message and exit"
 }
 
 install_pbd() {
@@ -52,6 +52,14 @@ template_drf() {
     cat pbd_configs/django_drf_readme.md > README.md
     sed -i "s/projectname/$pr_name/g" README.md
 
+    cp pbd_configs/containers/dev-container.json kernel/.devcontainer/dev-container.json
+    cp pbd_configs/containers/dev-Dockerfile kernel/.devcontainer/Dockerfile
+    cp pbd_configs/containers/dev-docker-compose.yml kernel/.devcontainer/docker-compose.yml
+
+    cp pbd_configs/containers/Dockerfile kernel/Dockerfile
+    cp pbd_configs/containers/docker-compose.yml docker-compose.yml
+    cp pbd_configs/django-entrypoint.sh kernel/entrypoint.sh
+
     rm -rf pbd_configs
 
     xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
@@ -73,6 +81,16 @@ template_gql() {
 
     cat pbd_configs/django_gql_readme.md > README.md
     sed -i "s/projectname/$pr_name/g" README.md
+
+    mkdir kernel/.devcontainer
+
+    cp pbd_configs/containers/dev-container.json kernel/.devcontainer/dev-container.json
+    cp pbd_configs/containers/dev-Dockerfile kernel/.devcontainer/Dockerfile
+    cp pbd_configs/containers/dev-docker-compose.yml kernel/.devcontainer/docker-compose.yml
+
+    cp pbd_configs/containers/Dockerfile kernel/Dockerfile
+    cp pbd_configs/containers/docker-compose.yml docker-compose.yml
+    cp pbd_configs/django-entrypoint.sh kernel/entrypoint.sh
 
     rm -rf pbd_configs
 

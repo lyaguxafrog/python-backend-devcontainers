@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  db:
+    image: 'postgres:12.4'
+    environment: 
+        POSTGRES_DB: db
+        POSTGRES_USER: developer
+        POSTGRES_PASSWORD: Passw0rd33
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  web:
+    volumes:
+      - ./kernel:/app
+      - ./kernel/static:/app/static
+      - ./kernel/media:/app/media
+    env_file:
+      - ./kernel/.env
+    build: ./kernel
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+
+volumes:
+  static:
