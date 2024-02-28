@@ -59,6 +59,9 @@ as_template() {
             echo "Django + DRF"
             template_drf
             rm -rf pbd.sh
+            git add .
+            git commit -m "init template"
+            git push
             ;;
         2)
             echo "Выбран шаблон Django + Graphene"
