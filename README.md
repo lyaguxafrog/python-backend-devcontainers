@@ -41,9 +41,9 @@ You can use this repository as a [GitHub template](https://docs.github.com/artic
 
 ----
 
-## 2. Install PBD
+## 2. Install PBD - IN DEVELOP
 
-You can also install PB and use it locally
+<!--You can also install PB and use it locally
 
 1. Clone repository
 ```bash
@@ -61,3 +61,5 @@ pbd --help # pbd - command in your shell
 ---
 
 **If you have any questions, ask in the [issue](https://github.com/lyaguxafrog/python-backend-devcontainers/issues)**
+-->
+
