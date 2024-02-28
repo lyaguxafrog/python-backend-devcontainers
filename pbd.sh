@@ -2,6 +2,9 @@
 
 # https://github.com/lyaguxafrog/python-backend-devcontainer
 
+help() {
+    echo "help"
+}
 
 install_pbd() {
     echo "Installing..."
@@ -25,6 +28,23 @@ install_pbd() {
 
 # }
 
+template_drf() {
+
+    # delete pbd files
+    rm -rf django-template-gql
+    rm -rf flask-template
+    rm -rf README.md
+    rm -rf LICENSE
+    rm -rf pbd_shell
+    rm -rf docs
+
+    mv django-template-drf kernel
+
+    read -p "Project name: " pr_name
+
+    open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
+}
+
 as_template() {
     echo "Select template:"
     echo "[1] Django + DRF"
@@ -35,15 +55,15 @@ as_template() {
     case "$template_choice" in
         1)
             echo "Выбран шаблон Django + DRF"
-            # Здесь можно добавить код для работы с шаблоном Django + DRF
+            # 
             ;;
         2)
             echo "Выбран шаблон Django + Graphene"
-            # Здесь можно добавить код для работы с шаблоном Django + Graphene
+            # 
             ;;
         3)
             echo "Выбран шаблон Flask"
-            # Здесь можно добавить код для работы с шаблоном Flask
+            # 
             ;;
         *)
             echo "Aborted..."
@@ -57,5 +77,8 @@ case "$1" in
         ;;
     --as-template)
         as_template
+        ;;
+    *)
+        help
         ;;
 esac
