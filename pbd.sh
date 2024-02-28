@@ -3,20 +3,6 @@
 # https://github.com/lyaguxafrog/python-backend-devcontainer
 
 
-if [[ $1 = 'startproject' ]]; then
-    printf "Which framework do you want to use?\n\n"
-    printf "[1] Django\n"
-    printf "[2] Flask\n"
-    printf "[3] FastAPI\n"
-    read -p "Enter the number: " framework_choice
-
-    if [[ $framework_choice = '1' ]]; then
-        printf "DRF(1) or Graphene(2)?\n"
-    fi
-fi
-
-
-
 install_pbd() {
     echo "Installing..."
 
@@ -28,18 +14,48 @@ install_pbd() {
     cp django-template-gql /home/$USER/.pbd/django-template-gql
     cp flask-template /home/$USER/.pbd/flask-template
 
-    cat pbd.sh > /home/$USER/.local/bin/pbd
+    cat pbd_shell > /home/$USER/.local/bin/pbd
 
     echo '"pbd" add in your shell'
     echo 'try "pbd --help"'
 
 }
 
+# project_settings() {
+
+# }
+
+as_template() {
+    echo "Select template:"
+    echo "[1] Django + DRF"
+    echo "[2] Django + Graphene"
+    echo "[3] Flask"
+    read -p "> " template_choice
+
+    case "$template_choice" in
+        1)
+            echo "Выбран шаблон Django + DRF"
+            # Здесь можно добавить код для работы с шаблоном Django + DRF
+            ;;
+        2)
+            echo "Выбран шаблон Django + Graphene"
+            # Здесь можно добавить код для работы с шаблоном Django + Graphene
+            ;;
+        3)
+            echo "Выбран шаблон Flask"
+            # Здесь можно добавить код для работы с шаблоном Flask
+            ;;
+        *)
+            echo "Aborted..."
+            ;;
+    esac
+}
 
 case "$1" in
-    startproject)
-        printf "Which framework do you want to use?\n\n"
-        printf "[1] Django\n"
-        printf "[2] Flask\n"
-        printf "[3] FastAPI\n"
-        read -p "Enter the number: " framework_choice
+    install)
+        install_pbd
+        ;;
+    --as-template)
+        as_template
+        ;;
+esac
