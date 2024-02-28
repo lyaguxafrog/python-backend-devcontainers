@@ -42,7 +42,6 @@ template_drf() {
     rm -rf flask-template
     rm -rf README.md
     rm -rf LICENSE
-    rm -rf pbd_shell
     rm -rf docs
 
     mv django-template-drf kernel
@@ -72,7 +71,6 @@ template_gql() {
     rm -rf flask-template
     rm -rf README.md
     rm -rf LICENSE
-    rm -rf pbd_shell
     rm -rf docs
 
     mv django-template-gql kernel
