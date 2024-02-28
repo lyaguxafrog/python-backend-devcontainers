@@ -39,10 +39,10 @@ template_drf() {
 
     read -p "Project name: " pr_name
 
-    cat pbd_configs/django_drf_template.md > README.md
+    cat pbd_configs/django_drf_readme.md > README.md
     sed -i "s/projectname/$prname/g" README.md
 
-    open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
+    xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
 
 as_template() {
@@ -55,7 +55,7 @@ as_template() {
     case "$template_choice" in
         1)
             echo "Django + DRF"
-            # 
+            template_drf
             ;;
         2)
             echo "Выбран шаблон Django + Graphene"
