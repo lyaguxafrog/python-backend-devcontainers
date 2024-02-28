@@ -42,6 +42,8 @@ template_drf() {
     cat pbd_configs/django_drf_readme.md > README.md
     sed -i "s/projectname/$pr_name/g" README.md
 
+    rm -rf pbd_configs
+
     xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
 
@@ -56,6 +58,7 @@ as_template() {
         1)
             echo "Django + DRF"
             template_drf
+            rm -rf pbd.sh
             ;;
         2)
             echo "Выбран шаблон Django + Graphene"
