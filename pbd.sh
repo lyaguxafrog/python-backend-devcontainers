@@ -40,7 +40,7 @@ template_drf() {
     read -p "Project name: " pr_name
 
     cat pbd_configs/django_drf_readme.md > README.md
-    sed -i "s/projectname/$prname/g" README.md
+    sed -i "s/projectname/$pr_name/g" README.md
 
     xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
