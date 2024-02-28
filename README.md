@@ -14,7 +14,6 @@ in develop
                 |____/ \___| \_/ \___\___/|_| |_|\__\__,_|_|_| |_|\___|_|  |___/
 
 ```
-<!-->
 # What is it?
 
 **Python Backend Dev containers(PBD)** - is an application for creating custom containers for developers and products.
@@ -64,4 +63,3 @@ pbd --help # pbd - command in your shell
 ---
 
 **If you have any questions, ask in the [issue](https://github.com/lyaguxafrog/python-backend-devcontainers/issues)**
-<!-->

@@ -24,9 +24,6 @@ install_pbd() {
 
 }
 
-# project_settings() {
-
-# }
 
 template_drf() {
 
