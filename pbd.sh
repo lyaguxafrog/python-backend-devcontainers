@@ -51,6 +51,8 @@ template_drf() {
     cat pbd_configs/django_drf_readme.md > README.md
     sed -i "s/projectname/$pr_name/g" README.md
 
+    mkdir kernel/.devcontainer
+
     cp pbd_configs/containers/dev-container.json kernel/.devcontainer/dev-container.json
     cp pbd_configs/containers/dev-Dockerfile kernel/.devcontainer/Dockerfile
     cp pbd_configs/containers/dev-docker-compose.yml kernel/.devcontainer/docker-compose.yml
