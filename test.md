@@ -1,13 +1,16 @@
-# Django + DRF
+# Project name
 
-[Django Docs](https://docs.djangoproject.com) | [DRF](https://www.django-rest-framework.org) | [REST](hhttps://restfulapi.net) | [PostgreSQL Docs](https://www.postgresql.org/docs/current/app-psql.html)
+## About
+<!-- Yor description here -->
 
 ## Stack:
 * Django
-* DRF
+* GraphQL
 * PostgreSQL
 * Docker + Docker-compose
 * Gunicorn
+
+
 ---
 ## Develop:
 
@@ -57,10 +60,7 @@ app/
 ├── __init__.py
 ├── models
 │   └── __init__.py
-├── serializers
-│   └── __init__.py
-├── views
-│   └── __init__.py
+├── schema
 └── services
     └── __init__.py
 ```

@@ -39,6 +39,9 @@ template_drf() {
 
     read -p "Project name: " pr_name
 
+    cat pbd_configs/django_drf_template.md > README.md
+    sed -i "s/projectname/$prname/g" README.md
+
     open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
 
@@ -51,7 +54,7 @@ as_template() {
 
     case "$template_choice" in
         1)
-            echo "Выбран шаблон Django + DRF"
+            echo "Django + DRF"
             # 
             ;;
         2)
@@ -59,11 +62,13 @@ as_template() {
             # 
             ;;
         3)
-            echo "Выбран шаблон Flask"
+            echo "Flask template in develop.."
+            exit 0
             # 
             ;;
         *)
             echo "Aborted..."
+            exit 1
             ;;
     esac
 }

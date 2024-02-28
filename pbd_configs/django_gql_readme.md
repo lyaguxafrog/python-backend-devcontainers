@@ -1,4 +1,4 @@
-# Project name
+# projectname
 
 ## About
 <!-- Yor description here -->
@@ -9,8 +9,7 @@
 * PostgreSQL
 * Docker + Docker-compose
 * Gunicorn
- ---
-
+---
 ## Develop:
 
 To work with the project, you need to install [vscode](https://code.visualstudio.com/) and [vscode-remote-containers](https://code.visualstudio.com/docs/remote/containers).
@@ -94,3 +93,4 @@ deploy.sh
 On local machine app will running on http://0.0.0.0/
 
 
+&copy; Gen by [PBD](https://lyaguxafrog/python-backend-devcontainers) with 💚

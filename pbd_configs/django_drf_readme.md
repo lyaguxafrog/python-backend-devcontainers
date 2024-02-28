@@ -1,6 +1,7 @@
-# Django + DRF
+# projectname
 
-[Django Docs](https://docs.djangoproject.com) | [DRF](https://www.django-rest-framework.org) | [REST](hhttps://restfulapi.net) | [PostgreSQL Docs](https://www.postgresql.org/docs/current/app-psql.html)
+## About
+<!-- Yor description here -->
 
 ## Stack:
 * Django
