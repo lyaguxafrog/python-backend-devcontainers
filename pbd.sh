@@ -59,6 +59,8 @@ template_drf() {
     cp pbd_configs/containers/docker-compose.yml docker-compose.yml
     cp pbd_configs/django-entrypoint.sh kernel/entrypoint.sh
 
+    cp pbd_configs/deploy.sh deploy.sh
+
     rm -rf pbd_configs
 
     xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
@@ -89,6 +91,8 @@ template_gql() {
     cp pbd_configs/containers/Dockerfile kernel/Dockerfile
     cp pbd_configs/containers/docker-compose.yml docker-compose.yml
     cp pbd_configs/django-entrypoint.sh kernel/entrypoint.sh
+
+    cp pbd_configs/deploy.sh deploy.sh
 
     rm -rf pbd_configs
 

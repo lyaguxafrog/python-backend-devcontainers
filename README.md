@@ -14,7 +14,7 @@
 ```
 # What is it?
 
-**Python Backend Dev containers(PBD)** - is an application for creating custom containers for developers and products.
+**Python Backend Dev containers(PBD)** - is an application for creating custom containers for develop and prodaction.
 
 # How to use?
 

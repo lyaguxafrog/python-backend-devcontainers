@@ -86,7 +86,7 @@ Open http://localhost:8000/admin to see admin dashboard. Open http://localhost:8
 ### Deploy
 For deploy run:
 ```bash
-deploy.sh
+./deploy.sh
 ```
 
 On local machine app will running on http://0.0.0.0/
