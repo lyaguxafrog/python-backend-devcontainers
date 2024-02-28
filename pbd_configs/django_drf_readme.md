@@ -37,7 +37,7 @@ For developing backend with django, open django project in vscode and reopen it 
 code kernel
 ```
 
-reopen pic
+![reopen](https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/pics/reopen.png?raw=true)
 
 For migrate:
 ```bash
@@ -75,7 +75,7 @@ To debug django code use cmd+F5
 
 Open http://localhost:8000 you will see this and this is normall. There is no builded webclient.
 
-local_hot_pic
+![localhost](https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/pics/localhost_8000.png?raw=true)
 
 Open http://localhost:8000/admin to see admin dashboard.
 
