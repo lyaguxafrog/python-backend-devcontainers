@@ -1,6 +1,6 @@
 # Django + DRF
 
-[Django Docs](https://docs.djangoproject.com) | [DRF](https://www.django-rest-framework.org) | [REST](hhttps://restfulapi.net) | [PostgreSQL Docs](https://www.postgresql.org/docs/current/app-psql.html)
+[Django Docs](https://docs.djangoproject.com) | [DRF](https://www.django-rest-framework.org) | [REST](https://restfulapi.net) | [PostgreSQL Docs](https://www.postgresql.org/docs/current/app-psql.html)
 
 ## Stack:
 * Django
