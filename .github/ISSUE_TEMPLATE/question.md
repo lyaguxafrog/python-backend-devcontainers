@@ -8,4 +8,4 @@ assignees: ''
 
 # <!-- your question here -->
 
-<!-- more information>
+<!-- more information -->
