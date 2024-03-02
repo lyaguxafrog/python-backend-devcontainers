@@ -43,6 +43,7 @@ template_drf() {
     rm -rf README.md
     rm -rf LICENSE
     rm -rf docs
+    rm -rf .github
 
     mv django-template-drf kernel
 
@@ -76,6 +77,7 @@ template_gql() {
     rm -rf README.md
     rm -rf LICENSE
     rm -rf docs
+    rm -rf .github
 
     mv django-template-gql kernel
 
