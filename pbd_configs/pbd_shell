@@ -5,6 +5,19 @@ show_help() {
     echo "help"
 }
 
+build_container() {
+
+    cp /home/$USER/.pbd/pbd_configs/containres/dev-container.json $pr_name/kernel/.devcontainer/
+    cp /home/$USER/.pbd/pbd_configs/containres/dev-Dockerfile $pr_name/kernel/.devcontainer/Dockerfile
+    cp /home/$USER/.pbd/pbd_configs/containres/dev-docker-compose.yml $pr_name/kernel/.devcontainer/docker-compose.yml
+    cp /home/$USER/.pbd/pbd_configs/containres/docker-compose.yml $pr_name/
+    cp /home/$USER/.pbd/pbd_configs/containres/Dockerfile $pr_name/kernel/
+
+    cp /home/$USER/.pbd/pbd_configs/deploy.sh $pr_name/
+    cp cp /home/$USER/.pbd/pbd_configs/django_entrypoint.sh $pr_name/kernel/entrypoint.sh
+
+}
+
 delete_pbd() {
 
     read -p "Are you sure you want to delete PBD? [y/N] " answer
@@ -18,7 +31,23 @@ delete_pbd() {
 }
 
 drf_template() {
+    read -p "Install Django + DRF [Y/n] " agreesing
+    if [ "$agreesing" = "n" ] || [ "$agreesing" = "N" ] || [ "$agreesing" = "no" ] || [ "$agreesing" = "No" ] || [ "$agreesing" = "NO" ]; then
+        echo "Aborted!"
+        exit 0
+    fi
 
-    
+    read -p "Project name: " pr_name
+    mkdir $pr_name
 
+    cp /home/$USER/.pbd/django-template-drf $pr_name/kernel
+
+    cat /home/$USER/.pbd/pbd_configs/django_drf_readme.md > $pr_name/README.md
+    sed -i "s/projectname/$pr_name/g" $pr_name/README.md
+
+    build_container
+
+    xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_DRF.md
 }
+
+
