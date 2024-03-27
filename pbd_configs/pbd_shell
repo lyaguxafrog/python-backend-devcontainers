@@ -40,7 +40,7 @@ drf_template() {
     read -p "Project name: " pr_name
     mkdir $pr_name
 
-    cp /home/$USER/.pbd/django-template-drf $pr_name/kernel
+    cp -r /home/$USER/.pbd/django-template-drf $pr_name/kernel
 
     cat /home/$USER/.pbd/pbd_configs/django_drf_readme.md > $pr_name/README.md
     sed -i "s/projectname/$pr_name/g" $pr_name/README.md
@@ -51,3 +51,24 @@ drf_template() {
 }
 
 
+gql_template() (
+
+    read -p "Install Django + Graphene [Y/n] " agreesing
+    if [ "$agreesing" = "n" ] || [ "$agreesing" = "N" ] || [ "$agreesing" = "no" ] || [ "$agreesing" = "No" ] || [ "$agreesing" = "NO" ]; then
+        echo "Aborted!"
+        exit 0
+    fi
+
+    read -p "Project name: " pr_name
+    mkdir $pr_name
+
+    cp -r /home/$USER/.pbd/pbd_configs/django-gql-template $pr_name/kernel
+    
+    cat /home/$USER/.pbd/pbd_configs/django_gql_readme.md > $pr_name/README.md
+    sed -i "s/projectname/$pr_name/g" $pr_name/README.md
+
+    build_container
+
+    xdg-open https://github.com/lyaguxafrog/python-backend-devcontainers/blob/release/docs/DJANGO_GRAPHENE.md
+
+)
