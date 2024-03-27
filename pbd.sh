@@ -23,12 +23,13 @@ install_pbd() {
     mkdir /home/$USER/.pbd/
 
     # copy templates
-    cp django-template-drf /home/$USER/.pbd/django-template-drf
-    cp django-template-gql /home/$USER/.pbd/django-template-gql
-    cp flask-template /home/$USER/.pbd/flask-template
+    cp -r django-template-drf /home/$USER/.pbd/django-template-drf
+    cp -r django-template-gql /home/$USER/.pbd/django-template-gql
+    cp -r flask-template /home/$USER/.pbd/flask-template
 
-    cat pbd_shell > /home/$USER/.local/bin/pbd
-
+    cat pbd_configs/pbd_shell > /home/$USER/.local/bin/pbd
+    chmod +x /home/$USER/.local/bin/pbd
+    
     echo '"pbd" add in your shell'
     echo 'try "pbd --help"'
 
